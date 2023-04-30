@@ -6,17 +6,15 @@ import torch
 from segment_anything import sam_model_registry, SamAutomaticMaskGenerator
 from os import path
 
-
-
 import torch
 import numpy as np
 from PIL import Image
 
 from IPython.display import display
 
-from inference.data.test_datasets import LongTestDataset, DAVISTestDataset, YouTubeVOSTestDataset
-from inference.data.mask_mapper import MaskMapper
-from model.network import XMem
+from XMem.inference.data.test_datasets import LongTestDataset, DAVISTestDataset, YouTubeVOSTestDataset
+from XMem.inference.data.mask_mapper import MaskMapper
+from XMem.model.network import XMem
 from inference.inference_core import InferenceCore
 from progressbar import progressbar
 from inference.interact.interactive_utils import image_to_torch, index_numpy_to_one_hot_torch, torch_prob_to_numpy_mask, overlay_davis
@@ -42,6 +40,10 @@ def autoSAM(image):
   height, width, channels = image.shape
   cv2.imwrite('first_mask.png',masks)
 
+# Use Segment Anything GUI
+
+    # save mask.png 
+    
 
 #XMem
 
